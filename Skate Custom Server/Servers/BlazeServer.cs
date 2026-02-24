@@ -43,7 +43,7 @@ namespace Servers
 
         private async Task RunAsync(CancellationToken ct)
         {
-            Console.WriteLine($"Blaze server started on port {_port}");
+            Console.WriteLine($"Blaze server started on IP {ServerGlobals.ServerIP} and port {_port}");
 
             while (!ct.IsCancellationRequested)
             {

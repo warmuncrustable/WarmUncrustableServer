@@ -1,11 +1,24 @@
-﻿using Servers;
+﻿using Newtonsoft.Json;
+using Servers;
+using Servers.Models;
 
-bool localHost = true;
-string ip = "127.0.0.1";
-if (!localHost)
-    ip = await new HttpClient().GetStringAsync("https://api.ipify.org");
+if (File.Exists("settings.json"))
+{
+    string serverSettingsJson = File.ReadAllText("settings.json");
+    ServerSettings? serverSettings = JsonConvert.DeserializeObject<ServerSettings>(serverSettingsJson);
 
-ServerGlobals.ServerIP = ip;
+    if (serverSettings != null && serverSettings.LocalHost)
+        ServerGlobals.ServerIP = serverSettings.LocalIPAddress;
+    else
+        ServerGlobals.ServerIP = await new HttpClient().GetStringAsync("https://api.ipify.org");
+}
+else
+{
+    var settings = new ServerSettings();
+    File.WriteAllText("settings.json", JsonConvert.SerializeObject(settings));
+    ServerGlobals.ServerIP = await new HttpClient().GetStringAsync("https://api.ipify.org");
+}
+
 ServerGlobals.ServerPort = 42100;
 ServerGlobals.HttpServerPort = 80;
 
