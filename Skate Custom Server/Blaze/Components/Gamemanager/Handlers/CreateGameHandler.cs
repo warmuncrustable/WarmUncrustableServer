@@ -32,12 +32,14 @@ namespace Blaze.Components.Gamemanager.Handlers
             "skatepark_owner_id"
         };
 
-        public static async Task HandleRequest(User joiningPlayer, byte[] packetBytes)
+        public static async Task HandleRequest(User creator, byte[] packetBytes)
         {
             // Make sure player doesn't have a lobby running already
-            if (joiningPlayer.CurrentGame != null)
+            if (creator.CurrentGame != null ||
+                creator.ExtendedData.NetworkAddress.IpPairAddress == null ||
+                creator.ExtendedData.NetworkAddress.IpPairAddress.Value.ExternalIp.IP == 0) // On strict NAT types External IP is usually indicated as 0 in server indicating user can't matchmake
             {
-                await ServerUtils.SendError(joiningPlayer, packetBytes, ServerUtils.ErrorCode.GAMEMANAGER_ERR_PERMISSION_DENIED);
+                await ServerUtils.SendError(creator, packetBytes, ServerUtils.ErrorCode.GAMEMANAGER_ERR_PERMISSION_DENIED);
                 return;
             }
 
@@ -53,11 +55,11 @@ namespace Blaze.Components.Gamemanager.Handlers
                     GameId = gameId
                 });
 
-            await joiningPlayer.Stream.WriteAsync(response.Serialize());
+            await creator.Stream.WriteAsync(response.Serialize());
 
             var hostInfo = new HostInfo
             {
-                PlayerId = joiningPlayer.Session.BlazeId,
+                PlayerId = creator.Session.BlazeId,
                 SlotId = 0
             };
 
@@ -75,17 +77,17 @@ namespace Blaze.Components.Gamemanager.Handlers
 
             var replicatedGameData = new ReplicatedGameData
             {
-                AdminPlayerList = new List<uint> { joiningPlayer.Session.BlazeId },
+                AdminPlayerList = new List<uint> { creator.Session.BlazeId },
                 GameAttributes = filteredAttributes,
                 SlotCapacities = new List<ushort> { 6, 0 },
                 GameId = gameId,
-                GameName = joiningPlayer.UserIdentification.Name,
+                GameName = creator.UserIdentification.Name,
                 GameSettings = request.GameSettings,
                 GameState = (int)GameState.INITIALIZING,
                 HostConnections = request.HostConnections,
-                TopologyHostSessionId = Convert.ToUInt32(joiningPlayer.Session.UserId),
+                TopologyHostSessionId = Convert.ToUInt32(creator.Session.UserId),
                 MaxPlayerCapacities = 6,
-                NetworkQosData = joiningPlayer.ExtendedData.QosData,
+                NetworkQosData = creator.ExtendedData.QosData,
                 NetworkTopology = (int)GameNetworkTopology.PEER_TO_PEER_FULL_MESH,
                 PersistedGameId = request.PersistedGameId,
                 PersistedGameIdSecret = request.PersistedGameIdSecret,
@@ -99,19 +101,19 @@ namespace Blaze.Components.Gamemanager.Handlers
             var game = new Game();
             game.GameData = replicatedGameData;
 
-            ReplicatedGamePlayer playerData = GameManagerUtils.CreateReplicatedGamePlayer(joiningPlayer, game);
+            ReplicatedGamePlayer playerData = GameManagerUtils.CreateReplicatedGamePlayer(creator, game);
             var player = new Player
             {
                 PlayerData = playerData,
-                UserData = joiningPlayer
+                UserData = creator
             };
 
             game.Players.Add(player);
-            game.HostId = joiningPlayer.UserIdentification.BlazeId;
+            game.HostId = creator.UserIdentification.BlazeId;
             ServerGlobals.Games[gameId] = game;
 
             await ServerUtils.SendNotificationToUser(
-                joiningPlayer,
+                creator,
                 new NotifyJoinGame
                 {
                     Error = 0,
@@ -122,8 +124,8 @@ namespace Blaze.Components.Gamemanager.Handlers
                 BlazeComponent.Gamemanager,
                 (ushort)GameManagerNotifications.NotifyJoinGame);
 
-            joiningPlayer.CurrentGame = game;
-            joiningPlayer.gamePlayer = player;
+            creator.CurrentGame = game;
+            creator.gamePlayer = player;
         }
     }
 }

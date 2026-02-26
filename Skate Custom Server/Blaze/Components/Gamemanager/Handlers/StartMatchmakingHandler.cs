@@ -4,7 +4,6 @@ using Blaze.Components.Gamemanager.Models;
 using Blaze.GamemanagerComponent;
 using Servers.Blaze.Models;
 using Blaze.MessageLists;
-using Org.BouncyCastle.Asn1.X509;
 
 namespace Blaze.Components.Gamemanager.Handlers
 {
@@ -15,7 +14,9 @@ namespace Blaze.Components.Gamemanager.Handlers
         public static async Task HandleRequest(User matchmaker, byte[] packetBytes)
         {
             // Make sure player doesn't have a lobby running already
-            if (matchmaker.CurrentGame != null)
+            if (matchmaker.CurrentGame != null ||
+                matchmaker.ExtendedData.NetworkAddress.IpPairAddress == null ||
+                matchmaker.ExtendedData.NetworkAddress.IpPairAddress.Value.ExternalIp.IP == 0) // On strict NAT types External IP is usually indicated as 0 in server indicating user can't matchmake
             {
                 await ServerUtils.SendError(matchmaker, packetBytes, ServerUtils.ErrorCode.GAMEMANAGER_ERR_PERMISSION_DENIED);
                 return;
