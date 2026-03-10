@@ -71,6 +71,16 @@ namespace Blaze.Components.Authentication
 
             user.IsAuthenticated = true;
             ServerGlobals.Users[sessionDetails.BlazeId] = user;
+            user.IsAuthenticated = true;
+
+            ulong externalId = user.UserIdentification.ExternalId;
+
+            var record = PlayerDatabase.GetOrCreate(externalId);
+
+            if (!string.IsNullOrEmpty(record.Name))
+            {
+                user.UserIdentification.Name = record.Name;
+            }
         }
     }
 }

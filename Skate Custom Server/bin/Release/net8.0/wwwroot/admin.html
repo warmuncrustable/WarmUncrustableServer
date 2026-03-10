@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Skate 3 Server Control</title>
+<style>
+body {
+    background:#111;
+    color:white;
+    font-family:sans-serif;
+    text-align:center;
+    padding-top:40px;
+}
+
+input {
+    width:300px;
+    padding:10px;
+}
+
+button {
+    padding:10px 20px;
+    margin-left:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Skate 3 Server Admin</h1>
+
+<input id="msg" placeholder="Enter message">
+<button onclick="send()">Send</button>
+
+<script>
+async function send() {
+    let message = document.getElementById("msg").value;
+
+    await fetch("/announce?msg=" + encodeURIComponent(message));
+
+    alert("Message sent!");
+}
+</script>
+
+</body>
+</html>

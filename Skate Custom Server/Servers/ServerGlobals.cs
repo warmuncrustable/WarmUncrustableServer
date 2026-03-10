@@ -7,7 +7,7 @@ namespace Servers
     public class ServerGlobals
     {
         public static string ServerIP = IPAddress.Any.ToString();
-        public static ushort ServerPort = 42100;
+        public static ushort ServerPort = 42127;
         public static ushort HttpServerPort = 80;
         public static uint PingPeriodSecs = 20;
 

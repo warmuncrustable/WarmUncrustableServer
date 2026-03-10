@@ -25,6 +25,9 @@ ServerGlobals.HttpServerPort = 80;
 // Game must send a heartbeat ping request every X seconds or disconnect client
 ServerGlobals.PingPeriodSecs = 20;
 
+//Load PlayerDatabase, needed for admin panel features 
+PlayerDatabase.Load();
+
 // Start HTTP server used for mandatory stuff like config .xml during login flow (found in wwwroot folder)
 var httpServer = new HttpServer(ServerGlobals.HttpServerPort);
 httpServer.Start();
@@ -40,6 +43,8 @@ Console.CancelKeyPress += (s, e) =>
     e.Cancel = true;
     cts.Cancel();
 };
+
+AutoSave.Loop(cts.Token);
 
 Console.WriteLine("All servers runnning, press CTRL+C to stop...");
 

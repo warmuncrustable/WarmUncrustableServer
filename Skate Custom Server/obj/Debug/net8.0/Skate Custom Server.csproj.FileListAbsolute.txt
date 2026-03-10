@@ -1,18 +1,42 @@
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\bin\Debug\net8.0\Skate Custom Server.exe
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\bin\Debug\net8.0\Skate Custom Server.deps.json
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\bin\Debug\net8.0\Skate Custom Server.runtimeconfig.json
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\bin\Debug\net8.0\Skate Custom Server.dll
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\bin\Debug\net8.0\Skate Custom Server.pdb
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\obj\Debug\net8.0\Skate Custom Server.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\obj\Debug\net8.0\Skate Custom Server.AssemblyInfoInputs.cache
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\obj\Debug\net8.0\Skate Custom Server.AssemblyInfo.cs
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\obj\Debug\net8.0\Skate Custom Server.csproj.CoreCompileInputs.cache
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\obj\Debug\net8.0\Skate Custom Server.dll
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\obj\Debug\net8.0\refint\Skate Custom Server.dll
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\obj\Debug\net8.0\Skate Custom Server.pdb
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\obj\Debug\net8.0\Skate Custom Server.genruntimeconfig.cache
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\obj\Debug\net8.0\ref\Skate Custom Server.dll
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\obj\Debug\net8.0\Skate Custom Server.csproj.AssemblyReference.cache
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\obj\Debug\net8.0\Skate Cu.17FB5E80.Up2Date
-C:\Users\joelr\source\repos\Skate Custom Server\Skate Custom Server\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/bin/Debug/net8.0/Skate Custom Server.exe
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/bin/Debug/net8.0/Skate Custom Server.deps.json
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/bin/Debug/net8.0/Skate Custom Server.runtimeconfig.json
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/bin/Debug/net8.0/Skate Custom Server.dll
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/bin/Debug/net8.0/Skate Custom Server.pdb
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.AssemblyInfoInputs.cache
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.AssemblyInfo.cs
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.csproj.CoreCompileInputs.cache
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.dll
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/obj/Debug/net8.0/refint/Skate Custom Server.dll
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.pdb
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.genruntimeconfig.cache
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/obj/Debug/net8.0/ref/Skate Custom Server.dll
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/bin/Debug/net8.0/BouncyCastle.Cryptography.dll
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.csproj.AssemblyReference.cache
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/obj/Debug/net8.0/Skate Cu.17FB5E80.Up2Date
+C:/Users/joelr/source/repos/Skate Custom Server/Skate Custom Server/bin/Debug/net8.0/Newtonsoft.Json.dll
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/bin/Debug/net8.0/wwwroot/skate3/config/PS3.xml
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/bin/Debug/net8.0/wwwroot/skate3/DWAYPRK000000000.jpg.psg
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/bin/Debug/net8.0/wwwroot/skate3/webkit/Content/skate3.css
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/bin/Debug/net8.0/wwwroot/skate3/webkit/temp.html
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/bin/Debug/net8.0/Skate Custom Server
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/bin/Debug/net8.0/Skate Custom Server.deps.json
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/bin/Debug/net8.0/Skate Custom Server.runtimeconfig.json
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/bin/Debug/net8.0/Skate Custom Server.dll
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/bin/Debug/net8.0/Skate Custom Server.pdb
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/bin/Debug/net8.0/BouncyCastle.Cryptography.dll
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/bin/Debug/net8.0/Newtonsoft.Json.dll
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.csproj.AssemblyReference.cache
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.GeneratedMSBuildEditorConfig.editorconfig
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.AssemblyInfoInputs.cache
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.AssemblyInfo.cs
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.csproj.CoreCompileInputs.cache
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.sourcelink.json
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/obj/Debug/net8.0/Skate Cu.17FB5E80.Up2Date
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.dll
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/obj/Debug/net8.0/refint/Skate Custom Server.dll
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.pdb
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/obj/Debug/net8.0/Skate Custom Server.genruntimeconfig.cache
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/obj/Debug/net8.0/ref/Skate Custom Server.dll
+/home/toast/projects/WarmUncrustableServer/Skate Custom Server/bin/Debug/net8.0/wwwroot/admin.html

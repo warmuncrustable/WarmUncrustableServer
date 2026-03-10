@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Skate Server Admin</title>
+
+<style>
+body{
+    background:#111;
+    color:white;
+    font-family:Arial;
+    padding:40px;
+}
+
+input{
+    padding:10px;
+    font-size:16px;
+    width:400px;
+}
+
+button{
+    padding:10px 20px;
+    font-size:16px;
+    margin-left:10px;
+}
+
+#status{
+    margin-top:15px;
+    color:#7CFF7C;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Skate Server Admin</h1>
+
+<h3>Send Global Message</h3>
+
+<input id="msg" placeholder="Message to all players(broken rn)">
+<button onclick="send()">Send</button>
+
+<div id="status"></div>
+
+<script>
+
+async function send(){
+
+    const msg = document.getElementById("msg").value;
+
+    if(!msg){
+        alert("Enter a message");
+        return;
+    }
+
+    const res = await fetch("/announce?msg=" + encodeURIComponent(msg));
+
+    if(res.ok){
+        document.getElementById("status").innerText = "Message sent!";
+    }else{
+        document.getElementById("status").innerText = "Failed to send.";
+    }
+
+}
+
+</script>
+<h2>Connected Players</h2>
+
+<table border="1" id="playersTable">
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Status</th>
+<th>Game</th>
+</tr>
+</thead>
+
+<tbody id="playersBody">
+</tbody>
+
+</table>
+<script>
+
+async function loadPlayers()
+{
+    let res = await fetch("/players");
+    let players = await res.json();
+
+    let tbody = document.getElementById("playersBody");
+    tbody.innerHTML = "";
+
+    players.forEach(p => {
+
+        let row = document.createElement("tr");
+
+        row.innerHTML = `
+        <td>${p.id}</td>
+        <td>${p.name}</td>
+        <td>${p.status}</td>
+        <td>${p.gameId || "-"}</td>
+        `;
+
+        tbody.appendChild(row);
+    });
+}
+
+setInterval(loadPlayers, 2000);
+loadPlayers();
+
+</script>
+
+</body>
+</html>
